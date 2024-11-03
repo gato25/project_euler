@@ -58,26 +58,26 @@ $$
 $$"""
 
 CODE_TEMPLATE = """
-def bodlogo_{n}(n: int) -> int:
-\t\"\"\"
-\t#Бодлого {n}: {title}
-\t
-\tArgs:
-\t\tn (int): {input_description}
-\t
-\tReturns:
-\t\tint: {output_description}
-\t\"\"\"
-\t# Анхны утгуудыг оноох
-\t{initialization}
-\t
-\t# Үндсэн алхмууд
-\t{main_logic}
-\t
-\treturn hariu
+def bodlogo_{problem_id}(n: int) -> int:
+    \"""
+    Бодлого {problem_id}: [Бодлогын нэр]
+    
+    Args:
+        n (int): [Оролтын тайлбар]
+    
+    Returns:
+        int: [Гаралтын тайлбар]
+    \"""
+    # Анхны утгуудыг оноох
+    [Анхны утгуудын код]
+    
+    # Үндсэн алхмууд
+    [Үндсэн алгоритмын код]
+    
+    return hariu
 
 # Жижиг тоогоор туршиж үзэх
-print(f"Жишээ тест: {bodlogo_{n}(10)}")
+print(f"Жишээ тест: {{bodlogo_{problem_id}(10)}}")
 """
 
 EXAMPLE_PYTHON_CELL = """# Бодлогын функц
@@ -247,6 +247,20 @@ Key requirements:
 - **Enclose the pseudocode within LaTeX environments as per the template**
 - **Use LaTeX formatting for any mathematical symbols or expressions within the pseudocode**
 - **Ensure the pseudocode is clear and properly formatted**
+
+Provide very detailed explanations for both the math and code:
+
+**Math Explanation Examples:**
+* Break down the problem into smaller, clearly explained steps.
+* Use visual aids (diagrams, tables) whenever possible.
+* Relate the math to real-world examples if applicable.
+* For example: "To find the sum of even numbers, we can use the formula..., which is derived from..."
+
+**Code Explanation Examples:**
+* Explain the 'why' behind each line of code, not just the 'what'.
+* Use descriptive variable names.
+* Connect the code back to the mathematical steps.
+* For example: "// This loop iterates through the numbers, checking for divisibility as explained in step 2."
 
 Here's the required Markdown structure:
 {MARKDOWN_TEMPLATE}
@@ -454,7 +468,7 @@ async def main():
     
     try:
         importer = EulerImporter(site_id, anthropic_api_key, 'https://api.edukit.mn')
-        await importer.import_problems(11, 20)
+        await importer.import_problems(18, 18)
     except Exception as e:
         logger.error(f"Main execution error: {str(e)}")
         raise
